@@ -54,14 +54,46 @@
             </ul>
         </section>
 
-        <section class="placeholder-form">
-            <h3>Formularz kontaktowy (w przygotowaniu)</h3>
-            <p>Wkrótce tutaj pojawi się formularz kontaktowy.</p>
+        <section class="sekcja_api">
+            <h3>Losowy samochód</h3>
+            <div id="autoApi">Ładowanie...</div>
+    <button id="noweAuto">Wylosuj inny samochód przy użyciu API</button>
         </section>
     </main>
 
     <footer>
         <p>© 2025 Tomasz Golecki & Mikołaj Zagojski | Wszelkie prawa zastrzeżone</p>
     </footer>
+        <script>
+            async function pobierzAuto() {
+            const autoDiv = document.getElementById('autoApi');
+            autoDiv.textContent = "Ładowanie API";
+
+            try {
+                const response = await fetch('https://myfakeapi.com/api/cars/');
+                if (!response.ok) throw new Error('Błąd podczas pobierania API');
+
+                const data = await response.json();
+                const cars = data.cars;
+
+                const losowyIndex = Math.floor(Math.random() * cars.length);
+                const auto = cars[losowyIndex];
+
+                autoDiv.innerHTML = `
+                    <p><strong>Marka:</strong> ${auto.car}</p>
+                    <p><strong>Model:</strong> ${auto.car_model}</p>
+                    <p><strong>Rok produkcji:</strong> ${auto.car_model_year}</p>
+                    <p><strong>Kolor:</strong> ${auto.car_color}</p>
+                `;
+            } catch (error) {
+                autoDiv.textContent = "Błąd API.";
+                console.error(error);
+            }
+        }
+
+        pobierzAuto();
+
+        document.getElementById('noweAuto').addEventListener('click', pobierzAuto);
+    </script>
 </body>
 </html>

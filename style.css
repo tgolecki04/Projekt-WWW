@@ -201,7 +201,88 @@ footer {
             font-size: 0.9em;
             color: #264653;
         }
-        
+
+
+.contact-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff8f0;
+    border: 2px solid #f3a354;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.contact-form h3 {
+    margin-bottom: 15px;
+    color: #d35f00;
+    text-align: center;
+}
+
+.contact-form p {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.contact-form fieldset {
+    border: 1px solid #f3a354;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-form legend {
+    font-weight: bold;
+    padding: 0 5px;
+    color: #d35f00;
+}
+
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"] {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.contact-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f3a354;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #d35f00;
+}
+
+#formResult {
+    background-color: #fff3e0;
+    border: 1px solid #f3a354;
+    padding: 15px;
+    border-radius: 10px;
+    color: #333;
+}
+
+     
 /* ------------------------------
    RESPONSYWNOŚĆ
 --------------------------------*/
