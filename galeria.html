@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - TwojeAuto</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <h1>TwojeAuto.pl</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="o_nas.html">O nas</a></li>
+                <li><a href="uslugi.html">Usługi</a></li>
+                <li><a href="galeria.html", class = "active">Galeria</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Galeria naszych projektów</h2>
+        <p>Poniżej przedstawiamy zdjęcia  projektów wykonanych dla naszych klientów. Zachęcamy do kontaktu z nami w celu nawiązania współpracy. Jak uważacie, który projekt Waszym zdaniem jest najlepszy? Prosimy o waszą opinię!</p>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="images/merc.jpg" alt="Mercedes">
+                <p>Mercedes GT</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/bmw.jpg" alt="Bmw">
+                <p>BMW M4 Competition</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/audi.jpg" alt="Audi">
+                <p>Audi S5</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/gklasa.jpg" alt="Mercedes G Klasa">
+                <p>Mercedes G Klasa</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/grabus.jpg" alt="WW Grabus">
+                <p>WW Grabus</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/maluch.jpg" alt=" Fiat125p - Maluch">
+                <p>Maluch</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/nissan.jpg" alt="Nissan">
+                <p>Nissan GT</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche2.jpg" alt="Porsche">
+                <p>Porsche 911</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/merc2.jpg" alt="Mercedes C Klasa">
+                <p>Mercedes GT</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/bmw2.jpg" alt="Bmw Nowa Seria">
+                <p>BMW Seria 6</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/lambo.jpg" alt="Lamobrgini">
+                <p>Lamborghini</p>
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche.jpg" alt="Porsche Nowe">
+                <p>Porche Cayenne</p>
+            </div>
+        </div>
+        <br>
+        <h2>Plany na przyszłość</h2>
+        <p>W najbliższych miesiącach przygotujemy dla was kolejne klasyki świata motoryzacji. Jednego jesteśmy pewni - będą to świetne projekty!. Zachęcamy was do śledzenia naszego blogu na bieżąco, ponieważ tam będziemy zamieszczać dokładniejsze informacje z biegiem czasu. Nadchodzące miesiące będą pełne pracy, ale jesteśmy przekonani, że będzie to dobry czas. Wyczekujcie!</p>
+    </main>
+
+    <footer>
+        <p>© 2025 Tomasz Golecki & Mikołaj Zagojski | Wszelkie prawa zastrzeżone</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const galleryImages = document.querySelectorAll(".gallery-item img");
+
+    galleryImages.forEach(img => {
+        img.style.cursor = "pointer"; // wskaźnik kliknięcia
+        img.addEventListener("click", function() {
+            // Tworzymy overlay
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0,0,0,0.8)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+            overlay.style.cursor = "pointer";
+            overlay.style.zIndex = 1000;
+
+            // Tworzymy powiększone zdjęcie
+            const largeImg = document.createElement("img");
+            largeImg.src = this.src;
+            largeImg.style.maxWidth = "90%";
+            largeImg.style.maxHeight = "90%";
+            largeImg.style.borderRadius = "10px";
+            largeImg.style.boxShadow = "0 4px 20px rgba(0,0,0,0.3)";
+            overlay.appendChild(largeImg);
+
+            // Kliknięcie w overlay zamyka powiększenie
+            overlay.addEventListener("click", () => document.body.removeChild(overlay));
+
+            // Dodanie overlay do body
+            document.body.appendChild(overlay);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
